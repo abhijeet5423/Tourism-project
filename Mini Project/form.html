@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Form</title>
+  <link rel="stylesheet" href="mini.css">
+</head>
+<body class="form">
+    
+<h1 class="formh">Lets Go!</h1>
+  <h2 class="info">Personal Information</h2>
+<div class="c1">
+  <form name = "myform" action="form.html" method="post" onsubmit="return validate()">
+
+    <label for="name">Name :</label>
+    <input type="text" name="name1">
+
+    <br><br>
+
+
+    <label for="phone">Phone :</label>
+    <input type="text" required name="p1">
+
+
+    <br><br>
+     E-mail : <input type="text" name = "email">
+    <br><br>
+    <label>Gender :</label>
+    <input type="radio" id="male" name="gender" value="male" checked>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+
+    <br><br>
+
+     
+    <label for="subscribe">Explore Places</label>
+
+    <br><br>
+
+    
+    <label for="Places">Places :</label>
+    <select id="Places" name="Places">
+      <option value="uk">Uttarakhand</option>
+      <option value="hp">Himachal Pradesh</option>
+      <option value="jk">Jammu and Kashmir</option>
+      
+    </select>
+
+    <br><br>
+
+    
+    <input type="submit" value="Submit" class="btnsub">
+
+  </form>
+</div>
+<script>
+  function validate(){
+let v= document.forms["myform"]["p1"].value;
+let v1= document.forms["myform"]["name1"].value;
+if(v1 == ""){
+    alert("Name cant be empty");
+    return false;
+}
+if(v.length<10)
+{
+alert("your number is not of 10 digit");
+return false;
+}
+var x=document.myform.email.value;  
+var atposition=x.indexOf("@");  
+var dotposition=x.lastIndexOf(".");  
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+  alert("Please enter a valid e-mail address");  
+  return false;  
+}  
+ }
+</script>
+
+</body>
+</html>
